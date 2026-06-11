@@ -1,0 +1,51 @@
+name: grep
+description: >
+  Search for patterns in files or stdin. Supports regular expressions and
+  common flags like recursive, ignore-case, line-number, and invert-match.
+executable: grep
+danger_level: safe
+arguments:
+  - name: pattern
+    description: "Pattern to search for (can be a regex)"
+    required: true
+    positional: 0
+  - name: path
+    description: "File(s) or directory to search. Supports globs like *.log"
+    required: false
+    positional: 1
+  - name: recursive
+    description: "Search directories recursively"
+    flag: "-r"
+    default: false
+  - name: ignore_case
+    description: "Ignore case when matching"
+    flag: "-i"
+    default: false
+  - name: line_number
+    description: "Show line numbers"
+    flag: "-n"
+    default: false
+  - name: invert
+    description: "Show lines that do NOT match the pattern"
+    flag: "-v"
+    default: false
+  - name: count
+    description: "Show only a count of matching lines per file"
+    flag: "-c"
+    default: false
+  - name: word_regexp
+    description: "Match only whole words"
+    flag: "-w"
+    default: false
+  - name: after_context
+    description: "Show N lines of trailing context after matches"
+    flag: "-A"
+    default: ""
+  - name: before_context
+    description: "Show N lines of leading context before matches"
+    flag: "-B"
+    default: ""
+examples:
+  - 'grep -rin "error" /var/log/'
+  - "grep -c \"TODO\" *.go"
+  - 'grep -w "func" *.py -n'

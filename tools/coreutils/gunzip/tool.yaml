@@ -1,0 +1,21 @@
+name: gunzip
+description: "Decompress files compressed with gzip (.gz extension)."
+executable: gunzip
+danger_level: safe
+arguments:
+  - name: file
+    description: ".gz file(s) to decompress"
+    required: true
+    positional: 0
+  - name: keep
+    description: "Keep the compressed file (do not delete .gz)"
+    flag: "-k"
+    default: false
+  - name: force
+    description: "Force decompression even if target exists"
+    flag: "-f"
+    default: false
+examples:
+  - "gunzip file.txt.gz"
+  - "gunzip -k archive.log.gz"
+  - "gunzip *.gz"

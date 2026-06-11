@@ -1,0 +1,29 @@
+name: wc
+description: "Count lines, words, and characters in files."
+executable: wc
+danger_level: safe
+arguments:
+  - name: file
+    description: "File(s) to count. Reads stdin if not specified"
+    required: false
+    positional: 0
+  - name: lines
+    description: "Show only line count"
+    flag: "-l"
+    default: false
+  - name: words
+    description: "Show only word count"
+    flag: "-w"
+    default: false
+  - name: chars
+    description: "Show only character count"
+    flag: "-m"
+    default: false
+  - name: bytes
+    description: "Show only byte count"
+    flag: "-c"
+    default: false
+examples:
+  - "wc main.go"
+  - "wc -l *.py"
+  - "wc -w README.md"

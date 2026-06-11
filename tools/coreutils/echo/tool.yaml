@@ -1,0 +1,17 @@
+name: echo
+description: "Display a line of text. Can expand variables like $HOME and $USER."
+executable: echo
+danger_level: safe
+arguments:
+  - name: text
+    description: "Text to display. Supports environment variables like $HOME"
+    required: true
+    positional: 0
+  - name: no_newline
+    description: "Do not output the trailing newline"
+    flag: "-n"
+    default: false
+examples:
+  - "echo Hello World"
+  - "echo $HOME"
+  - "echo -n 'Loading...'"

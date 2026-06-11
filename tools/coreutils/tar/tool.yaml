@@ -1,0 +1,41 @@
+name: tar
+description: >
+  Create, extract, or list archives in tar format. Common usage:
+  create: tar -czf archive.tar.gz files...
+  extract: tar -xzf archive.tar.gz
+  list: tar -tzf archive.tar.gz
+executable: tar
+danger_level: safe
+arguments:
+  - name: create
+    description: "Create a new archive (flag -c, use with -f)"
+    flag: "-c"
+    default: false
+  - name: extract
+    description: "Extract files from an archive (flag -x, use with -f)"
+    flag: "-x"
+    default: false
+  - name: list
+    description: "List files in an archive (flag -t, use with -f)"
+    flag: "-t"
+    default: false
+  - name: file
+    description: "Archive file name (use with -c, -x, or -t)"
+    flag: "-f"
+    default: ""
+  - name: gzip
+    description: "Compress or decompress with gzip (.tar.gz / .tgz)"
+    flag: "-z"
+    default: false
+  - name: verbose
+    description: "List files as they are processed"
+    flag: "-v"
+    default: false
+  - name: files
+    description: "File(s) or directory(ies) to add to the archive"
+    flag: ""
+    default: ""
+examples:
+  - "tar -czf archive.tar.gz ~/project/"
+  - "tar -xzf archive.tar.gz"
+  - "tar -tzf archive.tar.gz"

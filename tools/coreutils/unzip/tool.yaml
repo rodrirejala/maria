@@ -1,0 +1,25 @@
+name: unzip
+description: "Extract files from ZIP archives."
+executable: unzip
+danger_level: safe
+arguments:
+  - name: file
+    description: "ZIP file to extract"
+    required: true
+    positional: 0
+  - name: dest
+    description: "Destination directory for extracted files"
+    flag: "-d"
+    default: ""
+  - name: list
+    description: "List contents of zip archive without extracting"
+    flag: "-l"
+    default: false
+  - name: overwrite
+    description: "Overwrite existing files without prompting"
+    flag: "-o"
+    default: false
+examples:
+  - "unzip archive.zip"
+  - "unzip archive.zip -d ~/target/"
+  - "unzip -l archive.zip"

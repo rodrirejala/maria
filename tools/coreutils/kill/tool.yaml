@@ -1,0 +1,21 @@
+name: kill
+description: "Send a signal to a process by PID. Default signal is SIGTERM (15). Use -9 (SIGKILL) to force kill."
+executable: kill
+danger_level: confirm
+arguments:
+  - name: pid
+    description: "Process ID(s) to send signal to"
+    required: true
+    positional: 0
+  - name: signal
+    description: "Signal number or name (e.g. -9, -SIGKILL, -15, -SIGTERM)"
+    flag: "-s"
+    default: ""
+  - name: list
+    description: "List available signal names"
+    flag: "-l"
+    default: false
+examples:
+  - "kill 1234"
+  - "kill -9 5678"
+  - "kill -s SIGTERM 9012"

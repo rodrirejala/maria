@@ -1,0 +1,33 @@
+name: ps
+description: "Show information about running processes."
+executable: ps
+danger_level: safe
+arguments:
+  - name: aux
+    description: "Show all processes in BSD format (user, pid, cpu, mem, command)"
+    flag: "aux"
+    default: false
+  - name: ef
+    description: "Show all processes with full command line in standard format"
+    flag: "-ef"
+    default: false
+  - name: user
+    description: "Show processes for a specific user"
+    flag: "-u"
+    default: ""
+  - name: pid
+    description: "Show info for a specific PID"
+    flag: "-p"
+    default: ""
+  - name: forest
+    description: "Show process tree hierarchy"
+    flag: "--forest"
+    default: false
+  - name: sort
+    description: "Sort by field (e.g. %%mem, %%cpu, pid)"
+    flag: "--sort"
+    default: ""
+examples:
+  - "ps aux"
+  - "ps aux --sort=-%mem | head"
+  - "ps -ef"

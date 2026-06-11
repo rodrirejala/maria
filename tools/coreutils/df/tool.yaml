@@ -1,0 +1,29 @@
+name: df
+description: "Show available and used disk space on mounted filesystems."
+executable: df
+danger_level: safe
+arguments:
+  - name: path
+    description: "Show info for a specific path or mount point"
+    required: false
+    positional: 0
+  - name: human
+    description: "Show sizes in human-readable format (KB, MB, GB)"
+    flag: "-h"
+    default: false
+  - name: type
+    description: "Show filesystem type"
+    flag: "-T"
+    default: false
+  - name: local
+    description: "Show only local filesystems"
+    flag: "-l"
+    default: false
+  - name: inodes
+    description: "Show inode information instead of block usage"
+    flag: "-i"
+    default: false
+examples:
+  - "df -h"
+  - "df -hT /home"
+  - "df -h --total"

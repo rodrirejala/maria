@@ -1,0 +1,25 @@
+name: mkdir
+description: "Create directories. Supports creating parent directories with -p."
+executable: mkdir
+danger_level: safe
+arguments:
+  - name: path
+    description: "Directory path(s) to create"
+    required: true
+    positional: 0
+  - name: parents
+    description: "Create parent directories as needed, no error if exists"
+    flag: "-p"
+    default: false
+  - name: verbose
+    description: "Print a message for each created directory"
+    flag: "-v"
+    default: false
+  - name: mode
+    description: "Set permissions (e.g. 755, 700)"
+    flag: "-m"
+    default: ""
+examples:
+  - "mkdir -p ~/projects/go/src"
+  - "mkdir -m 700 ~/private"
+  - "mkdir -p /tmp/backup/logs"

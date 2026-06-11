@@ -1,0 +1,7 @@
+name: pwd
+description: "Print the full path of the current working directory."
+executable: pwd
+danger_level: safe
+arguments: []
+examples:
+  - "pwd"

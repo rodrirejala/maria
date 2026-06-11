@@ -1,0 +1,25 @@
+name: head
+description: "Display the first lines of a file (default: 10 lines)."
+executable: head
+danger_level: safe
+arguments:
+  - name: file
+    description: "File(s) to display"
+    required: true
+    positional: 0
+  - name: lines
+    description: "Number of lines to show (e.g. -5, -20)"
+    flag: "-n"
+    default: ""
+  - name: bytes
+    description: "Number of bytes to show (e.g. -c100)"
+    flag: "-c"
+    default: ""
+  - name: verbose
+    description: "Show filename headers"
+    flag: "-v"
+    default: false
+examples:
+  - "head -n 20 README.md"
+  - "head -v ~/Documents/*.txt"
+  - "head -c 100 /etc/hosts"

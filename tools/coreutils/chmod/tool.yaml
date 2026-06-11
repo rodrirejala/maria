@@ -1,0 +1,25 @@
+name: chmod
+description: "Change file permissions (mode). Supports octal (755) and symbolic (u+x) modes."
+executable: chmod
+danger_level: safe
+arguments:
+  - name: mode
+    description: "Permission mode, e.g. 755, 644, u+x, go-w"
+    required: true
+    positional: 0
+  - name: target
+    description: "File(s) or directory to change permissions on"
+    required: true
+    positional: 1
+  - name: recursive
+    description: "Change files and directories recursively"
+    flag: "-R"
+    default: false
+  - name: verbose
+    description: "Show changes for each file"
+    flag: "-v"
+    default: false
+examples:
+  - "chmod 755 script.sh"
+  - "chmod -R u+rwX ~/project/"
+  - "chmod 644 *.md"

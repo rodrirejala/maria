@@ -1,0 +1,17 @@
+name: date
+description: "Display or set the current date and time. Supports format strings like +%Y-%m-%d."
+executable: date
+danger_level: safe
+arguments:
+  - name: format
+    description: "Output format (e.g. +%Y-%m-%d, +%H:%M:%S, +%s for epoch)"
+    required: false
+    positional: 0
+  - name: utc
+    description: "Show time in UTC instead of local time"
+    flag: "-u"
+    default: false
+examples:
+  - "date"
+  - 'date +%Y-%m-%d'
+  - 'date -u +%H:%M:%S'

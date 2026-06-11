@@ -1,0 +1,25 @@
+name: move_files
+description: >
+  Move files matching a pattern from a source directory to a destination.
+  UNLIKE 'mv', this DOES create the destination directory automatically
+  if it doesn't exist. If dest is a relative path, it is created inside
+  the source directory. Ideal for organizing files by type
+  (e.g. "move .txt files from Downloads to a folder called text").
+executable: move_files.sh
+danger_level: safe
+arguments:
+  - name: pattern
+    description: "Glob pattern of files to move, e.g. *.txt, *.pdf, *.md"
+    required: true
+    flag: "--pattern"
+  - name: source
+    description: "Source directory path. E.g. ~/Downloads"
+    required: true
+    flag: "--source"
+  - name: dest
+    description: "Destination directory name or path. If relative, it is created inside source. E.g. text, ~/Documents/my-txt"
+    required: true
+    flag: "--dest"
+examples:
+  - "move_files --pattern *.txt --source ~/Downloads --dest text"
+  - "move_files --pattern *.zip --source ~/Downloads --dest ~/Documents"

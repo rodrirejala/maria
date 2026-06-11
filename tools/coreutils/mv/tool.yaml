@@ -1,0 +1,32 @@
+name: mv
+description: >
+  Move or rename files and directories. Does NOT create directories.
+  The destination MUST already exist or be a new file name.
+  Use move_files if you need automatic directory creation.
+executable: mv
+danger_level: safe
+arguments:
+  - name: source
+    description: "Source file(s) or directorie(s). Supports globs like *.txt"
+    required: true
+    positional: 0
+  - name: dest
+    description: "Destination directory or file path"
+    required: true
+    positional: 1
+  - name: verbose
+    description: "Print each moved file"
+    flag: "-v"
+    default: false
+  - name: interactive
+    description: "Prompt before overwriting"
+    flag: "-i"
+    default: false
+  - name: force
+    description: "Do not prompt before overwriting"
+    flag: "-f"
+    default: false
+examples:
+  - "mv file.txt /tmp/"
+  - "mv -v *.log ~/logs/"
+  - "mv ~/Downloads/*.txt ~/Documents/"

@@ -1,0 +1,33 @@
+name: du
+description: "Estimate file and directory space usage."
+executable: du
+danger_level: safe
+arguments:
+  - name: path
+    description: "Directory or file to analyze. Defaults to current directory"
+    required: false
+    positional: 0
+  - name: human
+    description: "Show sizes in human-readable format (KB, MB, GB)"
+    flag: "-h"
+    default: false
+  - name: summarize
+    description: "Show only a total for each argument"
+    flag: "-s"
+    default: false
+  - name: max_depth
+    description: "Show subdirectories up to N levels deep"
+    flag: "--max-depth"
+    default: ""
+  - name: sort_by_size
+    description: "Sort by size (requires sort -h pipe for human-readable)"
+    flag: ""
+    default: false
+  - name: total
+    description: "Show grand total at the end"
+    flag: "-c"
+    default: false
+examples:
+  - "du -sh ~/"
+  - "du -h --max-depth=1 /var/log"
+  - "du -sh * | sort -h"

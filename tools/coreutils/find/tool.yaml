@@ -1,0 +1,35 @@
+name: find
+description: >
+  Search for files in a directory hierarchy based on criteria
+  like name, type, size, or date.
+executable: find
+danger_level: confirm
+arguments:
+  - name: path
+    description: "Directory to start the search from"
+    required: true
+    positional: 0
+  - name: name
+    description: 'File name pattern (e.g. "*.txt", "*.log")'
+    flag: "-name"
+    default: ""
+  - name: type
+    description: "File type: f (file), d (directory), l (symlink)"
+    flag: "-type"
+    default: ""
+  - name: size
+    description: "Filter by size (e.g. +100M, -50k, 1024c)"
+    flag: "-size"
+    default: ""
+  - name: delete
+    description: "Delete found files. DANGEROUS!"
+    flag: "-delete"
+    default: false
+  - name: maxdepth
+    description: "Maximum search depth (e.g. 1 for current directory only)"
+    flag: "-maxdepth"
+    default: ""
+examples:
+  - 'find ~/Downloads -name "*.pdf"'
+  - "find /var/log -type f -size +100M"
+  - 'find . -name "*.tmp" -delete'

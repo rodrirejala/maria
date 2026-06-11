@@ -1,0 +1,33 @@
+name: sort
+description: "Sort lines of text files in alphabetical, numeric, or reverse order."
+executable: sort
+danger_level: safe
+arguments:
+  - name: file
+    description: "File(s) to sort. Sorts stdin if not specified"
+    required: false
+    positional: 0
+  - name: numeric
+    description: "Sort numerically (e.g. 2 < 10)"
+    flag: "-n"
+    default: false
+  - name: reverse
+    description: "Reverse sort order"
+    flag: "-r"
+    default: false
+  - name: unique
+    description: "Output only unique lines (remove duplicates)"
+    flag: "-u"
+    default: false
+  - name: human
+    description: "Sort by human-readable sizes (2K, 1G)"
+    flag: "-h"
+    default: false
+  - name: ignore_case
+    description: "Ignore case when sorting"
+    flag: "-f"
+    default: false
+examples:
+  - "sort list.txt"
+  - "sort -n -r numbers.txt"
+  - "sort -u -f words.txt"

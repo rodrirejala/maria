@@ -1,0 +1,29 @@
+name: gzip
+description: "Compress files using Lempel-Ziv coding (GNU zip). Replaces each file with a .gz version."
+executable: gzip
+danger_level: safe
+arguments:
+  - name: file
+    description: "File(s) to compress"
+    required: true
+    positional: 0
+  - name: keep
+    description: "Keep the original file (do not delete)"
+    flag: "-k"
+    default: false
+  - name: fast
+    description: "Use fastest compression (low compression ratio)"
+    flag: "--fast"
+    default: false
+  - name: best
+    description: "Use best compression (slowest)"
+    flag: "--best"
+    default: false
+  - name: verbose
+    description: "Show compression ratio for each file"
+    flag: "-v"
+    default: false
+examples:
+  - "gzip file.txt"
+  - "gzip -k *.log"
+  - "gzip -v archive.tar"

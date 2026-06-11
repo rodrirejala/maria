@@ -1,0 +1,13 @@
+name: touch
+description: "Create empty files or update timestamps of existing files."
+executable: touch
+danger_level: safe
+arguments:
+  - name: file
+    description: "File path(s) to create or update"
+    required: true
+    positional: 0
+examples:
+  - "touch README.md"
+  - "touch ~/projects/main.go"
+  - "touch file1.txt file2.txt file3.txt"

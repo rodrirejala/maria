@@ -1,0 +1,55 @@
+tools:
+  - name: cat
+    path: coreutils/cat/tool.yaml
+  - name: chmod
+    path: coreutils/chmod/tool.yaml
+  - name: cp
+    path: coreutils/cp/tool.yaml
+  - name: date
+    path: coreutils/date/tool.yaml
+  - name: df
+    path: coreutils/df/tool.yaml
+  - name: du
+    path: coreutils/du/tool.yaml
+  - name: echo
+    path: coreutils/echo/tool.yaml
+  - name: find
+    path: coreutils/find/tool.yaml
+  - name: grep
+    path: coreutils/grep/tool.yaml
+  - name: gunzip
+    path: coreutils/gunzip/tool.yaml
+  - name: gzip
+    path: coreutils/gzip/tool.yaml
+  - name: head
+    path: coreutils/head/tool.yaml
+  - name: kill
+    path: coreutils/kill/tool.yaml
+  - name: ls
+    path: coreutils/ls/tool.yaml
+  - name: mkdir
+    path: coreutils/mkdir/tool.yaml
+  - name: mv
+    path: coreutils/mv/tool.yaml
+  - name: ps
+    path: coreutils/ps/tool.yaml
+  - name: pwd
+    path: coreutils/pwd/tool.yaml
+  - name: rm
+    path: coreutils/rm/tool.yaml
+  - name: sort
+    path: coreutils/sort/tool.yaml
+  - name: tail
+    path: coreutils/tail/tool.yaml
+  - name: tar
+    path: coreutils/tar/tool.yaml
+  - name: touch
+    path: coreutils/touch/tool.yaml
+  - name: unzip
+    path: coreutils/unzip/tool.yaml
+  - name: wc
+    path: coreutils/wc/tool.yaml
+  - name: which
+    path: coreutils/which/tool.yaml
+  - name: move_files
+    path: custom/move_files/tool.yaml

@@ -1,0 +1,39 @@
+name: cp
+description: >
+  Copy files and directories. By default does NOT copy directories,
+  use recursive (-r) for that.
+executable: cp
+danger_level: safe
+arguments:
+  - name: source
+    description: "Source file(s) or directorie(s). Supports globs like *.txt"
+    required: true
+    positional: 0
+  - name: dest
+    description: "Destination path"
+    required: true
+    positional: 1
+  - name: recursive
+    description: "Copy directories recursively"
+    flag: "-r"
+    default: false
+  - name: verbose
+    description: "Print each copied file"
+    flag: "-v"
+    default: false
+  - name: preserve
+    description: "Preserve attributes (permissions, timestamps)"
+    flag: "-p"
+    default: false
+  - name: force
+    description: "Force copy, overwriting without prompt"
+    flag: "-f"
+    default: false
+  - name: interactive
+    description: "Prompt before overwriting"
+    flag: "-i"
+    default: false
+examples:
+  - "cp file.txt /tmp/"
+  - "cp -r ~/project /backup/"
+  - "cp -v *.jpg ~/photos/"

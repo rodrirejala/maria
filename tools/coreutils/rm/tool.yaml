@@ -1,0 +1,31 @@
+name: rm
+description: >
+  Remove (delete) files or directories. Use recursive (-r) for directories.
+  DANGEROUS: deletions are permanent unless using interactive mode.
+executable: rm
+danger_level: confirm
+arguments:
+  - name: target
+    description: "File(s) or directory to remove. Supports globs like *.tmp"
+    required: true
+    positional: 0
+  - name: recursive
+    description: "Remove directories and their contents recursively"
+    flag: "-r"
+    default: false
+  - name: force
+    description: "Ignore non-existent files, never prompt"
+    flag: "-f"
+    default: false
+  - name: interactive
+    description: "Prompt before every removal"
+    flag: "-i"
+    default: false
+  - name: verbose
+    description: "Explain what is being done"
+    flag: "-v"
+    default: false
+examples:
+  - "rm *.tmp"
+  - "rm -rf ~/.cache/temp/"
+  - "rm -i important.txt"

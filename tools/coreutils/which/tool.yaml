@@ -1,0 +1,17 @@
+name: which
+description: "Locate the full path of a command/executable."
+executable: which
+danger_level: safe
+arguments:
+  - name: command
+    description: "Command name(s) to locate"
+    required: true
+    positional: 0
+  - name: all
+    description: "Show all matching paths, not just the first"
+    flag: "-a"
+    default: false
+examples:
+  - "which python"
+  - "which go node cargo"
+  - "which -a python3"

@@ -1,0 +1,17 @@
+name: cat
+description: "Concatenate and display the contents of files."
+executable: cat
+danger_level: safe
+arguments:
+  - name: file
+    description: "File(s) to display. Supports globs like *.txt"
+    required: true
+    positional: 0
+  - name: number
+    description: "Number all output lines"
+    flag: "-n"
+    default: false
+examples:
+  - "cat README.md"
+  - "cat -n script.sh"
+  - "cat ~/.bashrc"

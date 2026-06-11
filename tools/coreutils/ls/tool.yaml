@@ -1,0 +1,37 @@
+name: ls
+description: "List directory contents."
+executable: ls
+danger_level: safe
+arguments:
+  - name: path
+    description: "Directory(ies) to list. Defaults to current directory if not specified"
+    required: false
+    positional: 0
+  - name: long
+    description: "Long format with details (permissions, size, date)"
+    flag: "-l"
+    default: false
+  - name: all
+    description: "Show hidden files (including . and ..)"
+    flag: "-a"
+    default: false
+  - name: human
+    description: "Human-readable sizes (KB, MB, GB)"
+    flag: "-h"
+    default: false
+  - name: recursive
+    description: "List subdirectories recursively"
+    flag: "-R"
+    default: false
+  - name: sort_time
+    description: "Sort by modification time (newest first)"
+    flag: "-t"
+    default: false
+  - name: reverse
+    description: "Reverse sort order"
+    flag: "-r"
+    default: false
+examples:
+  - "ls -la ~/Downloads"
+  - "ls -lhS ~/Documents"
+  - "ls -R ~/project"
